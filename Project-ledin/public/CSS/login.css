@@ -1,0 +1,17 @@
+.logo{padding: 22px 0px;height: 44px;}
+.logo>a>img{margin-left:160px;}
+.background{position: relative;height:650px;width: 100%;background-image:url("../img/login/login.jpg");background-repeat:repeat-x;}
+.login{width: 350px;height: 400px;background:#673ab70d;position: absolute;top:80px;right:200px;}
+.my_btn{background-color:#e91e63bd;padding:10px 132px;color: #fff;font-weight: bold;margin-top: 10px;}
+.login>button{color:#fff;}
+.login>div>form>p:first-child{color: #3c3c3c;font-size:20px;font-weight: bold;margin-top:70px;}
+.login>div>form .name{background-image: url("../img/login/lg2.png");background-position: left;background-repeat: no-repeat;background-size:32px;padding: 5px 65px;}
+.login>div>form .upwd{background-image: url("../img/login/lg1.png");background-position: left;background-repeat: no-repeat;background-size:35px;padding: 5px 65px;}
+.my_a,.my_a:hover{color: #6d493c;font-size: 12px;margin-left: 10px;}
+.my_div{margin-top:17px;margin-left:122px;
+}
+.bottom a,.bottom a:hover{color: #000;}
+.bottom ul li{margin-left:20px;font-size: 12px;}
+.bottom span{margin-left:20px;margin-right:20px;font-size: 12px;color: #666;}
+.cat{width:100px;height: 40px;}
+p.msg{font-size: 15px;color: red;}

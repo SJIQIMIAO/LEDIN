@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <link rel="stylesheet" href="CSS/bootstrap.css"/>
+    
+    <title></title>
+    <link rel="stylesheet" href="CSS/body.css"/>
+    <link rel="stylesheet" href="CSS/base.css"/>
+</head>
+<body>
+<!--固定定位的购物车-->
+<div class="my_fixed">
+    <div>
+        <img src="img/body/cat.png" alt=""/>
+    </div>
+    <p>
+        <a href="#">
+            <img src="img/header/04.png" alt=""/>
+            <p class="text-center">购<br>物<br>车</p>
+        </a>
+    </p>
+    <div class="mb-0">
+        <a href="#"><img src="img/body/top.png" alt=""/></a>
+    </div>
+</div>
+<!--头部导入-->
+<header>
+    <iframe src="header.html" frameborder="0" class="head"></iframe>
+</header>
+
+<div class="container">
+
+    <div class="d-flex mb-5">
+    <img src="img/body/01.jpg" class="img-fluid"/>
+    </div>
+</div>
+<div class="w-100 my_bg">
+    <!--导航条-->
+<div class="container">
+    <ul class="d-flex list-unstyled justify-content-around mb-5">
+        <li><img src="img/body/hana2.png" class="hana"/>&nbsp;&nbsp;<a href="body.html" class="my_a">首页</a></li>
+        <li><a href="products.html" class="my_a">全部商品</a></li>
+        <li><a href="products.html" class="my_a">新品</a></li>
+        <li><a href="products.html" class="my_a">分类</a></li>
+        <li><a href="products.html" class="my_a">商场同款</a></li>
+        <li><a href="products.html" class="my_a">设计师系列</a></li>
+        <li><a href="products.html" class="my_a">VIP</a></li>
+    </ul>
+    <!--轮播-->
+    <div class="carousel" data-ride="carousel" id="demo">
+        <!--为轮播添加指示符-->
+        <ul class="carousel-indicators">
+            <li class="active" data-target="#demo" data-slide-to="0"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+
+        </ul>
+        <!--添加要轮播的图片-->
+        <div id="carousel" class="carousel-inner">
+            <!--指定每个图片的内容-->
+            <div v-for="item in res" class="carousel-item">
+                <a :href="item.href"><img :src="item.img" class="w-100"/></a>
+            </div>
+        </div>
+        <!--左右箭头-->
+        <a href="#demo" class="carousel-control-prev" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a href="#demo" class="carousel-control-next" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+</div>
+</div>
+<div class="container">
+    <img src="img/body/date.jpg" class="img-fluid"/>
+
+
+
+
+</div>
+<div class="back d-flex">
+    <div><a href="products.html"><img src="img/body/22.jpg" class="img-fluid w-100"/></a></div>
+    <div><a href="products.html"><img src="img/body/03.jpg" class="img-fluid w-100"/></a></div>
+    <div><a href="products.html"><img src="img/body/23.jpg" class="img-fluid w-100"/></a></div>
+</div>
+
+<footer>
+    <iframe src="footer.html" frameborder="0" class="footer"></iframe>
+</footer>
+<script src="JS/jquery.min.js"></script>
+<script src="JS/popper.min.js"></script>
+<script src="JS/bootstrap.min.js"></script>
+<script src="JS/body.js"></script>
+<script src="JS/vue.js"></script>
+</body>
+</html>

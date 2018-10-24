@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <link rel="stylesheet" href="CSS/bootstrap.css"/>
+    <script src="JS/jquery.min.js"></script>
+    <script src="JS/popper.min.js"></script>
+    <script src="JS/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="CSS/products.css"/>
+    <link rel="stylesheet" href="CSS/base.css"/>
+    <link rel="stylesheet" href="CSS/products_details.css"/>
+    <title></title>
+</head>
+<body>
+<!--固定定位的购物车-->
+<div class="my_fixed">
+    <div>
+        <img src="img/body/cat.png" alt=""/>
+    </div>
+    <p>
+        <a href="#">
+            <img src="img/header/04.png" alt=""/>
+            <p class="text-center">购<br>物<br>车</p>
+        </a>
+    </p>
+    <div class="mb-0">
+        <a href="#"><img src="img/body/top.png" alt=""/></a>
+    </div>
+</div>
+<header>
+    <iframe src="header.html" frameborder="0" class="head"></iframe>
+</header>
+<div class="container">
+    <div class="d-flex mb-5">
+        <img src="img/body/01.jpg" class="img-fluid"/>
+    </div>
+    <ul class="d-flex list-unstyled justify-content-around">
+        <li><img src="img/body/hana2.png" class="hana"/>&nbsp;&nbsp;<a href="body.html" class="my_a">首页</a></li>
+        <li><a href="products.html" class="my_a">新品</a></li>
+        <li><a href="products.html" class="my_a">分类</a></li>
+        <li><a href="products.html" class="my_a">商场同款</a></li>
+        <li><a href="products.html" class="my_a">设计师系列</a></li>
+        <li><a href="products.html" class="my_a">上衣</a></li>
+        <li><a href="products.html" class="my_a">连衣裙</a></li>
+        <li><a href="products.html" class="my_a">下装</a></li>
+        <li><a href="products.html" class="my_a">VIP</a></li>
+    </ul>
+
+    <div class="row mb-5 mt-5" id="detail">
+        <!--左边的图片-->
+        <div id="detailleft" class="col-md-5 border text-center p-0">
+            <div>
+                <div id="mask" class="d-none"></div>
+                <div id="super-mask"></div>
+                <div id="div-lg" class="d-none"></div>
+                <img :src="pics[0].md" class="img-fluid"/>
+            </div>
+            
+            <div id="recommend1">
+                <div class="prev"></div>
+                <div class="next"></div>
+                <div class="recommend1_ul">
+                    <ul class="list-unstyled">
+                        <li v-for="item in pics" class=""><img :src="item.sm" :data-lg="item.lg" :data-md="item.md" alt=""/></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--右边的详情-->
+        <div id="detailright" class="col-md-7 border">
+            <h5 class="font-weight-bold">{{product.title}}</h5>
+            <p class="text-danger">{{product.subtitle}}</p>
+            <div class="w-100 bg-light mb-3 p-3">
+                <table class="w-100">
+                    <tr class="p-3">
+                        <td><img src="img/products/TB.png" alt=""/></td>
+                        <td class="small">全天猫实物商品通用</td>
+                        <td colspan="2" class="text-right"><a href="#" class="my_a">去刮券</a></td>
+                    </tr>
+                    <tr>
+                        <td class="small">价格:</td>
+                        <td><s>￥{{product.oldprice.toFixed(2)}}</s></td>
+                    </tr>
+                    <tr>
+                        <td class="small">促销价:</td>
+                        <td><h2 class="text-danger">￥{{product.newprice.toFixed(2)}}<img src="img/products/PH.PNG" alt=""/></h2></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="small">本店活动:</td>
+                        <td class="text-warning">满两件,包邮</td>
+                        <td  class="text-warning text-right" colspan="2">更多优惠</td>
+                    </tr>
+                </table>
+            </div>
+            <span class="small">运费:</span>
+            <!--此处有一个下拉列表未实现-->
+            <span class="small">浙江宁波&nbsp;至&nbsp;<button class="btn bg-transparent border p-1">杭州</button>快递:5.00</span>
+            <ul class="d-flex list-unstyled border-top border-bottom justify-content-around mt-3">
+                <li class="small p-1">月销量 <p class="badge badge-danger m-0">3741</p></li>
+                <li class="p-1">|</li>
+                <li class="small p-1">累计评价<a href="#" class="badge badge-success">892</a></li>
+                <li class="p-1">|</li>
+                <li class="small p-1">送天猫积分<a href="#" class="badge badge-warning">164</a></li>
+            </ul>
+            <!--尺码颜色分类-->
+            <table>
+                <tr>
+                    <td class="small">尺码</td>
+                    <td class="size">
+                        <button class="btn bg-transparent border p-1">155/S</button>
+                        <button class="btn bg-transparent border p-1">160/M</button>
+                        <button class="btn bg-transparent border p-1">165/L</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="small">颜色分类</td>
+                    <td>
+                        <img src="img/products/3(2)-xs.jpg" alt=""/>
+                        <img src="img/products/3(3)-xs.jpg" alt=""/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="small">数量</td>
+                    <td class="d-flex">
+                        <button id="sub" class="btn bg-transparent border rounded-0 p-1">-</button>
+                        <input id="count" type="text" value="1" class="w-25 text-center border"/>
+                        <button id="add" class="btn bg-transparent border rounded-0 p-1">+</button>
+                    </td>
+                </tr>
+            </table>
+            <div class="text-right">
+                <a class="btn my_bg pt-3 pb-2 pl-4 pr-4 text-white" href="#"><h6>立即购买</h6></a>
+                <a class="btn my_bg pt-3 text-white" href="#">
+                    <h6><img src="img/products/shopping.png" alt=""> 加入购物车</h6>
+                </a>
+                <a class="btn my_bg pt-1 pb-1 text-white" href="#" class="collection">
+                    <img src="img/products/shopping2.png">
+                    <br>
+                    收藏
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!--推荐-->
+    <p>
+        <hr/>猜你喜欢&nbsp;&nbsp;&nbsp;
+        <img src="img/products/heat2.png" alt=""/>
+        <hr/>
+    </p>
+
+    <div id="recommend" class="pl-3 mb-5">
+        <div class="prev"></div>
+        <div class="next"></div>
+        <div class="recommend_ul">
+        <ul id="ad" class="list-unstyled">
+            <li v-for="item in res" class="">
+                <a :href="item.href"><img class="" alt="" :src="item.img"></a>
+            </li>
+        </ul>
+        </div>
+    </div>
+    <!--下面的详情和评价-->
+
+    <div class="row">
+        <div class="col-md-2 border">
+            <ul class="list-unstyled">
+                <li class="my_bg p-2 text-center mb-3 rounded mt-3"><a href="#content1" class="text-white">商品参数</a></li>
+                <li class="my_bg p-2 text-center mb-3 rounded"><a href="#content2" class="text-white">商品展示</a></li>
+                <li class="my_bg p-2 text-center mb-3 rounded"><a href="#content3" class="text-white">产品尺寸</a></li>
+                <li class="my_bg p-2 text-center mb-3 rounded"><a href="#content4" class="text-white">温馨提示</a></li>
+                <li class="my_bg p-2 text-center mb-3 rounded"><a href="#content5" class="text-white">搭配推荐</a></li>
+            </ul>
+            <a href="#"><img src="img/products/adv1.jpg" alt="" class="img-fluid"/></a>
+            <a href="#"><img src="img/products/adv2.jpg" alt="" class="img-fluid"/></a>
+            <a href="#"><img src="img/products/adv3.jpg" alt="" class="img-fluid"/></a>
+        </div>
+        <div class="col-md-10 border border-left-0 my_details">
+            <ul class="list-unstyled d-flex border border-top-0">
+                <li class="p-2"><a href="#" class="text-dark">商品详情</a></li>
+                <li class="p-2"><a href="#" class="text-dark">累计评价</a></li>
+            </ul>
+            <!--商品详情-->
+            <!-- <p class="small">品牌名称:&nbsp;&nbsp;乐町</p>
+            <p id="content1" class="small">产品参数:&nbsp;&nbsp;</p>
+            <div class="d-flex justify-content-around">
+                <ul class="list-unstyled small">
+                    <li>材质成分:&nbsp;&nbsp;聚酯纤维83.7% 粘胶纤维</li>
+                    <li>货号:&nbsp;&nbsp;CWBE83327</li>
+                    <li>风格:&nbsp;&nbsp;甜美</li>
+                    <li>袖长:&nbsp;&nbsp;长袖</li>
+                    <li>图案:&nbsp;&nbsp;纯色</li>
+                    <li>颜色分类:&nbsp;&nbsp;卡其 黑色 蓝色 卡其</li>
+                </ul>
+                <ul class="list-unstyled small">
+                    <li>销售渠道类型:&nbsp;&nbsp;商场同款</li>
+                    <li>服装版型:&nbsp;&nbsp;修身</li>
+                    <li>甜美:&nbsp;&nbsp;日系</li>
+                    <li>袖型:&nbsp;&nbsp;常规</li>
+                    <li>适用年龄:&nbsp;&nbsp;18-24周岁</li>
+                    <li>适用年龄:&nbsp;&nbsp;18-24周岁</li>
+                </ul>
+                <ul class="list-unstyled small">
+                    <li>品牌:&nbsp;&nbsp;乐町</li>
+                    <li>厚薄:&nbsp;&nbsp;常规</li>
+                    <li>衣长:&nbsp;&nbsp;中长款</li>
+                    <li>衣门襟:&nbsp;&nbsp;单排扣</li>
+                    <li>年份季节:&nbsp;&nbsp;2018年秋季</li>
+                </ul>
+            </div>
+            <div class="text-center">
+                <p id="content2"><img src="img/products/pro1.jpg" alt=""/></p>
+                <p><img src="img/products/pro2.jpg" alt=""/></p>
+                <p><img src="img/products/pro3.jpg" alt=""/></p>
+                <p id="content3"><img src="img/products/size.jpg" alt=""/></p>
+                <p id="content4"><img src="img/products/size2.jpg" alt=""/></p>
+                <p><img src="img/products/size3.jpg" alt=""/></p>
+            </div> -->
+            <!--累计评价-->
+            
+        </div>
+    </div>
+</div>
+<footer>
+    <iframe src="footer.html" frameborder="0" class="footer"></iframe>
+</footer>
+  <script src="JS/jquery-3.2.1.js"></script>
+  <script src="JS/jquery-1.11.3.js"></script>
+  <script src="JS/bootstrap.min.js"></script>
+  <script src="JS/ajax.js"></script>
+  <script src="JS/header.js"></script>
+  <script src="JS/Products_detail.js"></script>
+  <script src="JS/vue.js"></script>
+</body>
+</html>

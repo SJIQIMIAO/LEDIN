@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <link rel="stylesheet" href="CSS/bootstrap.css"/>
+    <script src="JS/jquery.min.js"></script>
+    <script src="JS/popper.min.js"></script>
+    <script src="JS/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="CSS/products.css"/>
+    <link rel="stylesheet" href="CSS/base.css"/>
+    <title></title>
+</head>
+<body>
+<!--固定定位的购物车-->
+<div class="my_fixed">
+    <div>
+        <img src="img/body/cat.png" alt=""/>
+    </div>
+    <p>
+        <a href="#">
+            <img src="img/header/04.png" alt=""/>
+            <p class="text-center">购<br>物<br>车</p>
+        </a>
+    </p>
+    <div class="mb-0">
+        <a href="#"><img src="img/body/top.png" alt=""/></a>
+    </div>
+</div>
+<header>
+    <iframe src="header.html" frameborder="0" class="head"></iframe>
+</header>
+<div class="container">
+    <div class="d-flex mb-5">
+        <img src="img/body/01.jpg" class="img-fluid"/>
+    </div>
+    <ul class="d-flex list-unstyled justify-content-around">
+        <li><img src="img/body/hana2.png" class="hana"/>&nbsp;&nbsp;<a href="body.html" class="my_a">首页</a></li>
+        <li><a href="products.html" class="my_a">新品</a></li>
+        <li><a href="#" class="my_a">分类</a></li>
+        <li><a href="#" class="my_a">商场同款</a></li>
+        <li><a href="#" class="my_a">设计师系列</a></li>
+        <li><a href="#" class="my_a">上衣</a></li>
+        <li><a href="#" class="my_a">连衣裙</a></li>
+        <li><a href="#" class="my_a">下装</a></li>
+        <li><a href="#" class="my_a">VIP</a></li>
+    </ul>
+    <div class="row">
+        <!--面包屑导航-->
+        <div class="col-6">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb small bg-transparent">
+                    <li class="breadcrumb-item"><a class="text-dark font-weight-bold small" href="#">首页</a></li>
+                    <li class="breadcrumb-item"><a class="text-dark font-weight-bold small" href="#">新品</a></li>
+                </ol>
+            </nav>
+        </div>
+        <!--搜索框-->
+        <div class="col-6">
+            <input type="text" class="form-control rounded my_input" placeholder="在当前结果中搜索"/>
+        </div>
+    </div>
+    <!--商品列表-->
+
+    <div id="plist" class="row border">
+        <!-- <div class="col-md-3  position-relative p-0 mt-3">
+            <div class="text-center">
+                <div class="position-absolute w-100 h-75 my_div"><a href="products_details.html" class="text-white">&lt;查看详情&gt;</a></div>
+                <img src="img/products/2-sm.jpg" class="img-fluid"/>
+                <p class="text-danger font-weight-bold">￥139.00</p>
+                <a href="products_details.html" class="small my_a">乐町衬衫女格子chic早秋港味2018秋季新款宽松慵懒韩范学院风上衣</a>
+            </div>
+        </div>
+        <div class="col-md-3  position-relative p-0 mt-3">
+            <div class="text-center">
+                <div class="position-absolute w-100 h-75 my_div"><a href="#" class="text-white">&lt;查看详情&gt;</a></div>
+                <img src="img/products/3-sm.jpg" class="img-fluid"/>
+                <p class="text-danger font-weight-bold">￥199.00</p>
+                <a href="#" class="small my_a">乐町简洁式中长款风衣2018秋季新款学生bf港风收腰宽松过膝外套</a>
+            </div>
+        </div>
+        <div class="col-md-3  position-relative p-0 mt-3">
+            <div class="text-center">
+                <div class="position-absolute w-100 h-75 my_div"><a href="#" class="text-white">&lt;查看详情&gt;</a></div>
+                <img src="img/products/4-sm.jpg" class="img-fluid"/>
+                <p class="text-danger font-weight-bold">￥299.00</p>
+                <a href="#" class="small my_a">乐町蕾丝拼接毛针织衫长袖2018早秋季新款女装内搭打底衫薄款毛衣</a>
+            </div>
+        </div>
+        <div class="col-md-3  position-relative p-0 mt-3">
+            <div class="text-center">
+                <div class="position-absolute w-100 h-75 my_div"><a href="#" class="text-white">&lt;查看详情&gt;</a></div>
+                <img src="img/products/5-sm.jpg" class="img-fluid"/>
+                <p class="text-danger font-weight-bold">￥239.00</p>
+                <a href="#" class="small my_a">乐町雪纺衫洋气小衫甜美2018早秋新款女配吊带长袖蕾丝上衣女</a>
+            </div>
+        </div>
+        <div class="col-md-3  position-relative p-0 mt-3">
+            <div class="text-center">
+                <div class="position-absolute w-100 h-75 my_div"><a href="#" class="text-white">&lt;查看详情&gt;</a></div>
+                <img src="img/products/5-sm.jpg" class="img-fluid"/>
+                <p class="text-danger font-weight-bold">￥239.00</p>
+                <a href="#" class="small my_a">乐町雪纺衫洋气小衫甜美2018早秋新款女配吊带长袖蕾丝上衣女</a>
+            </div>
+        </div>
+        <div class="col-md-3 position-relative p-0 mt-3">
+            <div class="text-center">
+                <div class="position-absolute w-100 h-75 my_div"><a href="#" class="text-white">&lt;查看详情&gt;</a></div>
+                <img src="img/products/4-sm.jpg" class="img-fluid"/>
+                <p class="text-danger font-weight-bold">￥299.00</p>
+                <a href="#" class="small my_a">乐町蕾丝拼接毛针织衫长袖2018早秋季新款女装内搭打底衫薄款毛衣</a>
+            </div>
+        </div>
+        <div class="col-md-3 position-relative p-0 mt-3">
+            <div class="text-center">
+                <div class="position-absolute w-100 h-75 my_div"><a href="#" class="text-white">&lt;查看详情&gt;</a></div>
+                <img src="img/products/2-sm.jpg" class="img-fluid"/>
+                <p class="text-danger font-weight-bold">￥139.00</p>
+                <a href="#" class="small my_a">乐町衬衫女格子chic早秋港味2018秋季新款宽松慵懒韩范学院风上衣</a>
+            </div>
+        </div>
+        <div class="col-md-3 position-relative p-0 mt-3">
+            <div class="text-center">
+                <div class="position-absolute w-100 h-75 my_div"><a href="#" class="text-white">&lt;查看详情&gt;</a></div>
+                <img src="img/products/3-sm.jpg" class="img-fluid"/>
+                <p class="text-danger font-weight-bold">￥199.00</p>
+                <a href="#" class="small my_a">乐町简洁式中长款风衣2018秋季新款学生bf港风收腰宽松过膝外套</a>
+            </div>
+        </div> -->
+    </div>
+    <!--下面的分页-->
+    <ul id="pagination"class="list-unstyled d-flex justify-content-end mt-3">
+        <!-- <li class="border p-2 m-1 my_bg active"><a href="#" class="text-white">上一页</a></li>
+        <li class="border p-2 m-1 my_bg"><a href="#" class="text-white">1</a></li>
+        <li class="border p-2 m-1 my_bg"><a href="#" class="text-white">2</a></li>
+        <li class="border p-2 m-1 my_bg"><a href="#" class="text-white">3</a></li>
+        <li class="border p-2 m-1 my_bg"><a href="#" class="text-white">4</a></li>
+        <li class="border p-2 m-1 my_bg"><a href="#" class="text-white">下一页</a></li> -->
+    </ul>
+</div>
+<footer>
+    <iframe src="footer.html" frameborder="0" class="footer"></iframe>
+</footer>
+<script src="JS/jquery-1.11.3.js"></script>
+<script src="JS/products.js"></script>
+</body>
+</html>

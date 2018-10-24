@@ -1,0 +1,15 @@
+.size button:active{border-color:red !important;}
+.my_bg{background-color:#e89aa8;}
+.my_details>ul li:active{border-bottom:3px solid #e89aa8;}
+.prev{width: 25px;height: 34px;background: url("../img/products/hover-prev.png") no-repeat;float: left;margin-top: 115px;cursor: pointer;}
+.next{width: 25px;height: 34px;background: url("../img/products/hover-next.png") no-repeat;float: right;margin-top: 115px;cursor: pointer;}
+#recommend1>.prev,#recommend1>.next{margin-top:50px;}
+.recommend_ul>ul li{width:250px;float: left;display: inline;margin-left:11px;}
+.recommend_ul>ul{overflow: hidden;height:240px!important;}
+/*上面小的图片滚动*/
+.recommend1_ul>ul li{width:90px;float: left;display: inline;margin-top:33px;margin-left:11px;}
+.recommend1_ul>ul{overflow: hidden;margin: 0;height:100px!important;}
+/* 放大镜样式 */
+#mask{position: absolute;width:176px;height:176px;background-color: #e89aa8;opacity: 0.3;}
+#super-mask{position: absolute;width: 100%;height:430px;opacity: 0.6;}
+#div-lg{position: absolute;width:500px;height:500px;z-index: 1000;left:430px;border:1px solid #ddd;}
