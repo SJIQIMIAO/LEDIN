@@ -68,7 +68,7 @@ $(function(){
             $mask.css({top,left})
             $lgDiv.css(
             "backgroundPosition",
-            `${-2*left}px ${-2*top}px`
+            `${-2.326*left}px ${-2*top}px`
             )
         })
     // 滚动广告商品!!!!!!!!!!!!!!
@@ -137,8 +137,106 @@ $(function(){
         }
     })
 
+// /*评论表*/ 
+if(location.search.indexOf("lid=")!=-1){
+    var lid=location.search.split("=")[1];
+    //console.log(lid)
+    var p = new Promise((resolve,reject)=>{
+         var comment=$.ajax({
+                url:"http://127.0.0.1:3000/details/comment",
+                type:"get",
+                data:`lid=${lid}`,
+                dataType:"json"
+            })
+           
+            resolve(comment);
+    })
+   }
+p.then((res)=>{
+//console.log(res.data);
+
+new Vue({
+    el:"#comment",
+    data:{
+        comment:res.data,
+        msg:"",
+        pageIndex:0
+    },
+    methods:{
+        postComment(){
+            //发表评论
+            var username="匿名用户"; //用户名
+            //console.log(lid)
+            var bid=lid;      
+            var content=this.msg;  //双向绑定留言内容
+            //console.log(content)
+            //对留言内容验证大于2
+            //console.log(username+":"+nid+":"+content)
+            var url="details/saveComment";
+            var obj={bid:bid,content:content,username:username};
+            $.ajax({
+                url:url,
+                type:"post",
+                data:obj
+            }).then(result=>{ 
+                if(result.code==1){
+                    
+                    //1.添加完成清空原有内容
+                    this.msg="";
+                    //2.提示
+                   // Toast(result.body.msg);
+                    this.pageIndex=0;  //将当前页码清零
+                    this.comment=[];      //数据值清空
+                    this.getCommentList();//加载第一页
+                }//else{
+                //     Toast(result.body.msg)
+                // }
+            })
 
 
+
+        },
+        getCommentList(){
+            //当前页+1
+            this.pageIndex++;
+            //url地址
+            // console.log(lid)
+            var url="details/comment?lid="+lid;
+               url+="&pno="+this.pageIndex;
+            //console.log("1111"+this.comment)
+            $.ajax({
+                    url:url,
+                    type:"get",
+                    dataType:"json",
+                    // success:function(res){
+                        
+                    //     //this.comment=res.data;
+                    //     // this.comment=this.comment.concat(res.data)
+                    // }
+                }).then(res=>{  //相当于success  因为在ajax中访问不到this.comment，所以用.then
+                    //console.log(res);
+                    //console.log(this.comment)
+                    this.comment=res.data;
+                    //console.log("2222"+this.comment)
+                })
+        }
+    },
+    mounted(){
+        this.getCommentList();
+        //console.log(213)
+    }
+    
+})
+}) 
+
+
+/*评论选项卡切换 */
+$(document).ready(function(){
+    $(".my_details li").click(function(){
+        $(this).addClass("hover").siblings().removeClass("hover");
+        $(".details_parent").children().eq($(this).index()).show().siblings().hide();
+    })
+})
 
 
 

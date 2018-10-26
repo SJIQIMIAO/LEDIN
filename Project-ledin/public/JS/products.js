@@ -17,11 +17,11 @@ $(function(){
             var {pno,pageCount,products}=data;
             var html="";
             for(var {spic,newprice,title,lid} of products){
-                html+=`<div class="col-md-3  position-relative p-0 mt-3">
+                html+=`<div class="col-md-3  position-relative p-0 mt-3 mb-3">
                 <div class="text-center">
                     <div class="position-absolute w-100 h-75 my_div"><a href="products_details.html?lid=${lid}" class="text-white">&lt;查看详情&gt;</a></div>
                     <img src="${spic}" class="img-fluid"/>
-                    <p class="text-danger font-weight-bold">￥${newprice.toFixed(2)}</p>
+                    <p class="text-danger font-weight-bold mt-3">￥${newprice.toFixed(2)}</p>
                     <a href="products_details.html?lid=${lid}" class="small my_a">${title}</a>
                 </div>
             </div>`

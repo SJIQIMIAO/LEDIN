@@ -48,7 +48,7 @@
         <li><a href="products.html" class="my_a">VIP</a></li>
     </ul>
 
-    <div class="row mb-5 mt-5" id="detail">
+    <div class="row mb-5 mt-5" id="detail" v-cloak>
         <!--左边的图片-->
         <div id="detailleft" class="col-md-5 border text-center p-0">
             <div>
@@ -70,7 +70,7 @@
         </div>
         <!--右边的详情-->
         <div id="detailright" class="col-md-7 border">
-            <h5 class="font-weight-bold">{{product.title}}</h5>
+            <h5 class="font-weight-bold mt-3">{{product.title}}</h5>
             <p class="text-danger">{{product.subtitle}}</p>
             <div class="w-100 bg-light mb-3 p-3">
                 <table class="w-100">
@@ -164,6 +164,7 @@
         </ul>
         </div>
     </div>
+
     <!--下面的详情和评价-->
 
     <div class="row">
@@ -180,48 +181,84 @@
             <a href="#"><img src="img/products/adv3.jpg" alt="" class="img-fluid"/></a>
         </div>
         <div class="col-md-10 border border-left-0 my_details">
-            <ul class="list-unstyled d-flex border border-top-0">
-                <li class="p-2"><a href="#" class="text-dark">商品详情</a></li>
-                <li class="p-2"><a href="#" class="text-dark">累计评价</a></li>
+            <ul class="list-unstyled d-flex mt-3">
+                <li class="hover p-1 rounded-top">商品详情</li>
+                <li class="p-1 rounded-top ml-4">累计评价</li>
             </ul>
             <!--商品详情-->
-            <!-- <p class="small">品牌名称:&nbsp;&nbsp;乐町</p>
-            <p id="content1" class="small">产品参数:&nbsp;&nbsp;</p>
-            <div class="d-flex justify-content-around">
-                <ul class="list-unstyled small">
-                    <li>材质成分:&nbsp;&nbsp;聚酯纤维83.7% 粘胶纤维</li>
-                    <li>货号:&nbsp;&nbsp;CWBE83327</li>
-                    <li>风格:&nbsp;&nbsp;甜美</li>
-                    <li>袖长:&nbsp;&nbsp;长袖</li>
-                    <li>图案:&nbsp;&nbsp;纯色</li>
-                    <li>颜色分类:&nbsp;&nbsp;卡其 黑色 蓝色 卡其</li>
-                </ul>
-                <ul class="list-unstyled small">
-                    <li>销售渠道类型:&nbsp;&nbsp;商场同款</li>
-                    <li>服装版型:&nbsp;&nbsp;修身</li>
-                    <li>甜美:&nbsp;&nbsp;日系</li>
-                    <li>袖型:&nbsp;&nbsp;常规</li>
-                    <li>适用年龄:&nbsp;&nbsp;18-24周岁</li>
-                    <li>适用年龄:&nbsp;&nbsp;18-24周岁</li>
-                </ul>
-                <ul class="list-unstyled small">
-                    <li>品牌:&nbsp;&nbsp;乐町</li>
-                    <li>厚薄:&nbsp;&nbsp;常规</li>
-                    <li>衣长:&nbsp;&nbsp;中长款</li>
-                    <li>衣门襟:&nbsp;&nbsp;单排扣</li>
-                    <li>年份季节:&nbsp;&nbsp;2018年秋季</li>
-                </ul>
+            <div class="details_parent">
+                <div>
+                    <p class="small">品牌名称:&nbsp;&nbsp;乐町</p>
+                    <p id="content1" class="small">产品参数:&nbsp;&nbsp;</p>
+                    <div class="d-flex justify-content-around">
+                        <ul class="list-unstyled small">
+                            <li>材质成分:&nbsp;&nbsp;聚酯纤维83.7% 粘胶纤维</li>
+                            <li>货号:&nbsp;&nbsp;CWBE83327</li>
+                            <li>风格:&nbsp;&nbsp;甜美</li>
+                            <li>袖长:&nbsp;&nbsp;长袖</li>
+                            <li>图案:&nbsp;&nbsp;纯色</li>
+                            <li>颜色分类:&nbsp;&nbsp;卡其 黑色 蓝色 卡其</li>
+                        </ul>
+                        <ul class="list-unstyled small">
+                            <li>销售渠道类型:&nbsp;&nbsp;商场同款</li>
+                            <li>服装版型:&nbsp;&nbsp;修身</li>
+                            <li>甜美:&nbsp;&nbsp;日系</li>
+                            <li>袖型:&nbsp;&nbsp;常规</li>
+                            <li>适用年龄:&nbsp;&nbsp;18-24周岁</li>
+                            <li>适用年龄:&nbsp;&nbsp;18-24周岁</li>
+                        </ul>
+                        <ul class="list-unstyled small">
+                            <li>品牌:&nbsp;&nbsp;乐町</li>
+                            <li>厚薄:&nbsp;&nbsp;常规</li>
+                            <li>衣长:&nbsp;&nbsp;中长款</li>
+                            <li>衣门襟:&nbsp;&nbsp;单排扣</li>
+                            <li>年份季节:&nbsp;&nbsp;2018年秋季</li>
+                        </ul>
+                    </div>
+                    <div class="text-center">
+                        <p id="content2"><img src="img/products/pro1.jpg" alt=""/></p>
+                        <p><img src="img/products/pro2.jpg" alt=""/></p>
+                        <p><img src="img/products/pro3.jpg" alt=""/></p>
+                        <p id="content3"><img src="img/products/size.jpg" alt=""/></p>
+                        <p id="content4"><img src="img/products/size2.jpg" alt=""/></p>
+                        <p><img src="img/products/size3.jpg" alt=""/></p>
+                    </div>
+                </div>
+                <!--累计评价-->
+                <div style="display:none">
+                    <div class="desc_detail" id="comment">
+                        <div class="mt-3">
+                            <textarea placeholder="请发表您的评论" maxlength="120" v-model="msg"></textarea>
+                            <button class="btn1" @click="postComment">发表评论</button>
+                            <div style="clear: both"></div>
+                            <div class="cmt_list" style="margin:5px 0" v-for="(item,i) in comment">
+                                    
+                                <div class="cmt_list_item">
+                                        <div class="cmt_list_comment">
+                                                <p>{{item.content}}</p>
+                                        </div>
+                                    <div class="cmt_list_title">
+                                        <ul>
+                                            <!-- <li>第{{i+1}}楼</li> -->
+                                            <li class="text-danger">{{item.ctime}}</li>
+                                            <li class="name">{{item.username}}</li>
+                                            
+                                            <li class="star">
+                                                <div class="star_after">★★★★★</div>
+                                                <div class="star_before">★★★★★</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <button class="btn2" @click="getCommentList">加载更多</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="text-center">
-                <p id="content2"><img src="img/products/pro1.jpg" alt=""/></p>
-                <p><img src="img/products/pro2.jpg" alt=""/></p>
-                <p><img src="img/products/pro3.jpg" alt=""/></p>
-                <p id="content3"><img src="img/products/size.jpg" alt=""/></p>
-                <p id="content4"><img src="img/products/size2.jpg" alt=""/></p>
-                <p><img src="img/products/size3.jpg" alt=""/></p>
-            </div> -->
-            <!--累计评价-->
-            
+        </div>
+    </div>
         </div>
     </div>
 </div>

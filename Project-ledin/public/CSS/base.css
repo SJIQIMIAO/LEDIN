@@ -13,3 +13,7 @@ div.my_fixed>div{margin-top:200px;}
 div.my_fixed>div:hover{background-color:#dc3545;}
 div.my_fixed a{color:#fff;}
 .hana{width:30px;height:auto;}
+
+[v-cloak]{
+    display: none;
+}
