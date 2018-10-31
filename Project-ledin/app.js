@@ -1,4 +1,4 @@
-//使用express构建web服务器 --11:25
+//使用express构建web服务器
 const express = require('express');
 const bodyParser = require('body-parser');
 /*引入路由模块*/
@@ -20,5 +20,4 @@ app.use("/details",details);
 app.use("/products",products);
 app.use("/login",login);
 app.use("/register",register);
-//http://localhost:3000/products/?kw=macbook i7 128g
 
